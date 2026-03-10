@@ -36,7 +36,7 @@ steps:
     includeRootFolder: false
     archiveType: zip
     archiveFile:
-$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-$(phython.version).zip'
+'$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-$(phython.version).zip'
   replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
