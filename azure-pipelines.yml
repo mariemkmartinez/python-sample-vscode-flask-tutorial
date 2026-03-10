@@ -37,7 +37,7 @@ steps:
     archiveType: zip
     archiveFile:
 '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-$(phython.version).zip'
-  replaceExistingArchive: true
+  replaceExistingArchive:appendCommitMessageToRunName:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifacts'
