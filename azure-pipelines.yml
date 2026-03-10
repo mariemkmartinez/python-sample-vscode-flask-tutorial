@@ -35,9 +35,8 @@ steps:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
     includeRootFolder: false
     archiveType: zip
-    archiveFile:
-'$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-$(phython.version).zip'
-  replaceExistingArchive:appendCommitMessageToRunName:
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-$(phython.version).zip'
+    replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifacts'
@@ -49,4 +48,4 @@ steps:
 - script: |
    pip install pytest-azurepipelines
    pytest
-displayName:'Run pytest'
+  displayName: 'Run pytest'
